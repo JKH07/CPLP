@@ -1,7 +1,52 @@
-body {
-  font-family: sans-serif;
-  background: #f9f9f9;
-  color: #333;
-  text-align: center;
-  margin-top: 50px;
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+html,body {
+ height: auto;
+}
+body{
+    background: white;
+    display: flex;
+     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.options_bar{
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.color_button,.reset_button,.size_button{
+    height: 1.5rem;
+    padding: 0rem;
+}
+.dimensions_input{
+
+}
+.size_button{
+    width: 5rem;
+}
+.reset_button{
+    width: 5rem;
+}
+.cell{
+    background: grey;
+    border-radius: .5rem;
+}
+.grid{
+    --size:3;
+    --width:35rem;
+    --height:35rem;
+    background: black;
+    width: var(--width);
+    height:var(--height);
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+    border-radius: 2rem;
 }
