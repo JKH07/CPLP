@@ -3,18 +3,47 @@ const content = document.querySelector(".grid");
 const cell_Size = document.querySelector('.size_button');
 const cell_Color = document.querySelector('.color_button');
 const reset = document.querySelector('.reset_button');
-if (!content || !cell_Size || !cell_Color || !reset) {
+const grayscale = document.querySelector('.grayscale');
+if (!content || !cell_Size || !cell_Color || !reset || !grayscale) {
     throw new Error("Missing required input");
 }
 let gridSize = parseInt(cell_Size.value);
 let isDrawing = false;
+let isGray = false;
 function paintCell(cell) {
     if (!isDrawing)
         return;
     cell.style.backgroundColor = cell_Color.value;
+    if (isGray) {
+        cell.style.filter = "grayscale(100%)";
+    }
+    else {
+        cell.style.filter = "none";
+    }
 }
 function clickCell(cell) {
     cell.style.backgroundColor = cell_Color.value;
+    if (isGray) {
+        cell.style.filter = "grayscale(100%)";
+    }
+    else {
+        cell.style.filter = "none";
+    }
+}
+function grayscaleOverlay() {
+    console.log("Gray");
+    isGray = !isGray;
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.style.filter = isGray ? "grayscale(100%)" : "none";
+    });
+    if (isGray) {
+        cell_Color.style.filter = "grayscale(100%)";
+        cell_Color.style.opacity = "0.6";
+    }
+    else {
+        cell_Color.style.filter = "none";
+        cell_Color.style.opacity = "1";
+    }
 }
 function createGrid() {
     content.style.setProperty("--size", gridSize.toString());
@@ -41,4 +70,5 @@ cell_Size.addEventListener('change', () => {
     gridSize = parseInt(cell_Size.value);
     resetGrid();
 });
+grayscale.addEventListener('click', grayscaleOverlay);
 createGrid();
