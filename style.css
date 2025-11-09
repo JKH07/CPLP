@@ -41,8 +41,8 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .reset_button{
     background-color: red;
 }
-.save_png_button{
-    width: 5rem;
+.rand_drawing{
+    width: 10rem;
     background-color:greenyellow;
 }
 .rand_color_animation{

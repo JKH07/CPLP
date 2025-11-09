@@ -5,6 +5,7 @@ const cell_Color = document.querySelector('.color_button');
 const reset = document.querySelector('.reset_button');
 const grayscale = document.querySelector('.grayscale');
 const rand_color = document.querySelector('.rand_color');
+const printt = document.querySelector('.save_png_button');
 if (!content || !cell_Size || !cell_Color || !reset || !grayscale) {
     throw new Error("Missing required input");
 }
@@ -84,6 +85,10 @@ window.addEventListener('mouseup', () => {
 function resetGrid() {
     createGrid();
 }
+function print() {
+    console.log("printed");
+    window.print();
+}
 reset.addEventListener('click', resetGrid);
 cell_Size.addEventListener('change', () => {
     gridSize = parseInt(cell_Size.value);
@@ -91,4 +96,5 @@ cell_Size.addEventListener('change', () => {
 });
 grayscale.addEventListener('click', grayscaleOverlay);
 rand_color.addEventListener('click', randColor);
+printt === null || printt === void 0 ? void 0 : printt.addEventListener('click', print);
 createGrid();

@@ -88,14 +88,15 @@ window.addEventListener('mouseup', () => {
 function resetGrid(): void {
     createGrid();
 }
+
 reset.addEventListener('click', resetGrid);
 
 cell_Size.addEventListener('change', () => {
     gridSize = parseInt(cell_Size.value);
     resetGrid();
 });
+
 grayscale.addEventListener('click', grayscaleOverlay);
 rand_color!.addEventListener('click', randColor);
-
 
 createGrid();
