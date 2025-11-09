@@ -19,7 +19,7 @@ body{
     align-items: center;
     gap: 1rem;
 }
-.color_button,.reset_button,.size_button,.grayscale{
+.color_button,.reset_button,.size_button,.grayscale,.rand_color{
     height: 1.5rem;
     padding: 0rem;
 }
@@ -31,6 +31,9 @@ body{
 }
 .reset_button,.grayscale{
     width: 5rem;
+}
+.rand_color{
+    width: 8rem;
 }
 .cell{
     background: grey;

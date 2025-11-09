@@ -3,12 +3,13 @@ const cell_Size = document.querySelector<HTMLInputElement>('.size_button');
 const cell_Color = document.querySelector<HTMLInputElement>('.color_button');
 const reset = document.querySelector<HTMLButtonElement>('.reset_button');
 const grayscale=document.querySelector<HTMLButtonElement>('.grayscale');
-
+const rand_color=document.querySelector<HTMLButtonElement>('.rand_color');
 
 if (!content || !cell_Size || !cell_Color || !reset||!grayscale) {
     throw new Error("Missing required input");
     
 }
+//assigning types in mandatory
 let gridSize: number = parseInt(cell_Size.value);
 let isDrawing: boolean = false;
 let isGray: boolean = false;
@@ -35,8 +36,8 @@ function grayscaleOverlay(): void {
     console.log("Gray");
     isGray=!isGray;  
     document.querySelectorAll<HTMLDivElement>('.cell').forEach(cell => {
+        //ternary operator
     cell.style.filter = isGray ? "grayscale(100%)" : "none";
-
   });
   if (isGray) {
     cell_Color!.style.filter = "grayscale(100%)";
@@ -60,6 +61,22 @@ function createGrid(): void {
     }
   
 }
+function generateHEX():string{
+  var col=Math.floor(Math.random()*256);
+  if(Math.log(col)<2)return col.toString(16)+col.toString(16);
+  else return col.toString(16);
+
+}
+function randColor():void{
+  const r=generateHEX();
+  const g=generateHEX();
+  const b=generateHEX();
+//string interpolation
+let color: string=`#${r}${g}${b}`;
+
+ cell_Color!.value=color;
+ console.log(color);
+}
 window.addEventListener('mousedown', () => {
     isDrawing = true;
 });
@@ -78,5 +95,7 @@ cell_Size.addEventListener('change', () => {
     resetGrid();
 });
 grayscale.addEventListener('click', grayscaleOverlay);
+rand_color!.addEventListener('click', randColor);
+
 
 createGrid();
