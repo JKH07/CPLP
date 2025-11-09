@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
  }
 html,body {
  height: auto;
@@ -18,10 +20,38 @@ body{
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-left: -2.5rem;
+    margin-top: -2rem;
+    
 }
 .color_button,.reset_button,.size_button,.grayscale,.rand_color{
-    height: 1.5rem;
+    height: 2rem;
+}
+button{
+    border-radius: 2rem;
+    background-color: paleturquoise;
     padding: 0rem;
+    border: 2px solid transparent;
+    color: white;
+    height: 2rem;
+    text-align: center;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+.reset_button{
+    background-color: red;
+}
+.save_png_button{
+    width: 5rem;
+    background-color:greenyellow;
+}
+.rand_color_animation{
+    width: 8rem;
+    background-color: blueviolet;
+}
+.grayscale{
+    background-color: gray;
+    width: 7rem;
 }
 .dimensions_input{
 
@@ -29,7 +59,7 @@ body{
 .size_button{
     width: 5rem;
 }
-.reset_button,.grayscale{
+.reset_button{
     width: 5rem;
 }
 .rand_color{
@@ -53,4 +83,9 @@ body{
     grid-template-columns: repeat(var(--size), 1fr);
     grid-template-rows: repeat(var(--size), 1fr);
     border-radius: 2rem;
+    margin-top: -2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.otherOptions{
+    margin-top: 10rem;
 }

@@ -8,22 +8,31 @@
 </head>
 <body>
  
-  <div class="options_bar">
-    <button class="reset_button">reset</button>
+ 
+  
+    <div class="container" style="display: flex; gap: 1rem;">
+      <div class="con" style="height: 100%; align-items: center;">
+         <div class="options_bar">
+    <button class="reset_button">Reset</button>
     <input type="color" value="#ffffff" class="color_button">
     
     <input type="number" value="10" class="size_button" min="5" max="30">
-    <button class="grayscale">grayscale</button>
+    <button class="grayscale">Grayscale</button>
     <button class="rand_color">Random Color</button>
   </div>
-  
-    <div class="grid"></div>
-    <div class="otherOptions">
+<div class="grid"></div>
+      </div>
         
-        <button class="save_png_button"></button>
-        
-        <button class="rand_color_animation"></button>
-    </div>
+    
+    <div class="otherOptions"style=" height: 100%; " >
+        <ul style="list-style-type: none; ">
+          <li><button class="save_png_button" style="margin-top: 1rem;">Save</button></li>
+          <li><button class="rand_color_animation" style="margin-top: 1rem;">Animation</button></li>
+          <button style="margin-top: 1rem;">Undo</button>
+          <button style="margin-top: 1rem;" >Redo</button>
+        </ul>
+      
+    </div></div>
  
   <script type="module" src="./dist/main.js"></script>
 </body>
