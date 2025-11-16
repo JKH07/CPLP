@@ -8,29 +8,24 @@
 </head>
 <body>
  
- 
-  
-    <div class="container" style="display: flex; gap: 1rem;">
-      <div class="con" style="height: 100%; align-items: center;">
-         <div class="options_bar">
-    <button class="reset_button">Reset</button>
+  <div class="options_bar">
+    <button class="reset_button">reset</button>
     <input type="color" value="#ffffff" class="color_button">
     
     <input type="number" value="10" class="size_button" min="5" max="30">
-    <button class="grayscale">Grayscale</button>
-    <button class="rand_color">Random Color</button>
+    <button class="grayscale">grayscale</button>
+    <button class="undo_button">Undo</button>
+    <button class="redo_button">Redo</button>
+
   </div>
-<div class="grid"></div>
-      </div>
-    <div class="otherOptions"style=" height: 100%; " >
-        <ul style="list-style-type: none; ">
-        <li><button class="rand_drawing">Generate Drawing</button></li>
-          <li><button class="rand_color_animation" style="margin-top: 1rem;"></button></li>
-          <button style="margin-top: 1rem; width: 5rem;">Undo</button>
-          <button style="margin-top: 1rem; width: 5rem;" >Redo</button>
-        </ul>
-      
-    </div></div>
+  
+    <div class="grid"></div>
+    <div class="otherOptions">
+        
+        <button class="save_png_button"></button>
+        <button class="rand_color_with_n_clicks"></button>
+        <button class="rand_color_animation"></button>
+    </div>
  
   <script type="module" src="./dist/main.js"></script>
 </body>
